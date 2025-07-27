@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tried and Tried Again - Statistical Research</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(120deg, #f8fafc, #dbeafe);
+      color: #333;
+      transition: background 0.5s, color 0.5s;
+      animation: gradientMove 10s ease infinite;
+      background-size: 200% 200%;
+    }
+    @keyframes gradientMove {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    header {
+      text-align: center;
+      background: #0066cc;
+      color: white;
+      padding: 20px 10px;
+      font-size: 1.6em;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      background: #e0e0e0;
+      padding: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav button {
+      padding: 8px 14px;
+      background: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9em;
+      transition: background 0.3s, transform 0.2s;
+    }
+    nav button:hover {
+      background: #004d99;
+      transform: scale(1.05);
+    }
+    .dark-mode {
+      background: #1c1c1c;
+      color: #eaeaea;
+      animation: none;
+    }
+    .dark-mode header {
+      background: #003366;
+    }
+    .dark-mode nav {
+      background: #333;
+    }
+    .dark-mode nav button {
+      background: #444;
+      color: #ddd;
+    }
+    .content {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      transition: background 0.5s;
+    }
+    .dark-mode .content {
+      background: #2b2b2b;
+    }
+    h2 {
+      color: #0066cc;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+    }
+    .dark-mode h2 {
+      color: #4da6ff;
+      border-color: #444;
+    }
+    h3 {
+      margin-top: 20px;
+      color: #444;
+    }
+    .dark-mode h3 {
+      color: #ccc;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.8em;
+      color: #555;
+      padding: 15px;
+    }
+    .fade-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Documentary Photo Grid */
+    .photo-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+    .photo-grid figure {
+      flex: 1 1 calc(33.3% - 10px);
+      text-align: center;
+      background: #f8f9fa;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .photo-grid img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    .photo-grid figcaption {
+      font-size: 0.9em;
+      margin-top: 5px;
+      color: #555;
+    }
+    .dark-mode .photo-grid figure {
+      background: #2b2b2b;
+    }
+    .dark-mode .photo-grid figcaption {
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+  <header>Tried and Tried Again: A Statistical Comparison of Quarterly Examination Outcomes</header>
+
+  <nav>
+    <button onclick="scrollToSection('intro')">Introduction</button>
+    <button onclick="scrollToSection('problem')">Problem</button>
+    <button onclick="scrollToSection('significance')">Significance</button>
+    <button onclick="scrollToSection('scope')">Scope</button>
+    <button onclick="scrollToSection('rrl')">RRL</button>
+    <button onclick="scrollToSection('recommendations')">Recommendations</button>
+    <button onclick="scrollToSection('documentary')">Photos</button>
+    <button onclick="scrollToSection('authors')">Authors</button>
+    <button onclick="toggleDarkMode()">Dark Mode</button>
+  </nav>
+
+  <div class="content fade-scroll" id="intro">
+    <h2>• Introduction / Background of the Study</h2>
+    <p>
+      This study examines the quarterly examination scores of Grade 10 STE students to identify statistical patterns in their academic performance. According to a 2023 Department of Education (DepEd) report, quarterly exam results are one of the most reliable indicators of student mastery. However, 47% of public school students show inconsistent performance due to factors like study habits and varying teaching strategies.  
+      🔗 <a href="https://www.deped.gov.ph" target="_blank">DepEd Official Reports</a>
+    </p>
+    <p>
+      The goal of this research is to determine whether STE students’ performance improves, declines, or remains consistent across all four quarters.
+    </p>
+  </div>
+
+  <div class="content fade-scroll" id="problem">
+    <h2>• Statement of the Problem</h2>
+    <p><strong>Main Problem:</strong> What statistical trends can be observed in the quarterly examination outcomes of Grade 10 STE students?</p>
+    <ul>
+      <li>1.1 What is the average score for each quarter?</li>
+      <li>1.2 Which quarter records the highest and lowest average performance?</li>
+      <li>1.3 Are there significant differences between the scores of each quarter?</li>
+      <li>1.4 What factors (study habits, subject difficulty) do students believe influence their performance?</li>
+    </ul>
+  </div>
+
+  <div class="content fade-scroll" id="significance">
+    <h2>• Significance of the Study</h2>
+    <p><strong>Students:</strong> Can identify weak areas and improve their study methods.</p>
+    <p><strong>Teachers:</strong> Can pinpoint which quarters or lessons require better review strategies.</p>
+    <p><strong>Parents:</strong> Gain awareness of when students might need extra help.</p>
+    <p><strong>School:</strong> Can design intervention programs for improving quarterly performance.</p>
+  </div>
+
+  <div class="content fade-scroll" id="scope">
+    <h2>• Scope and Delimitation</h2>
+    <p><strong>Scope:</strong></p>
+    <ul>
+      <li>Focuses only on Grade 10 STE students</li>
+      <li>Includes quarterly examination scores in Science, Mathematics, and English</li>
+    </ul>
+    <p><strong>Delimitation:</strong></p>
+    <ul>
+      <li>Excludes Senior High and non‑STE students</li>
+      <li>Does not include psychological or emotional factors; focuses solely on statistical trends</li>
+    </ul>
+  </div>
+
+  <div class="content fade-scroll" id="rrl">
+    <h2>• Review of Related Literature</h2>
+    <p><strong>1. Academic Performance Trends Across Grading Periods</strong><br>
+      This study shows that students’ scores often fluctuate due to teaching methods and review techniques, with improved performance after targeted intervention.  
+      🔗 <a href="https://eric.ed.gov/?id=EJ1254321" target="_blank">Read here</a>
+    </p>
+    <p><strong>2. Study Habits and Academic Achievement</strong><br>
+      Consistent daily study habits are proven to increase test performance, while cramming is linked to inconsistent results.  
+      🔗 <a href="https://scholar.google.com/scholar_lookup?title=Study+Habits+and+Academic+Achievement&hl=en" target="_blank">View study</a>
+    </p>
+    <p><strong>Connections:</strong> Both studies help explain why exam scores change quarterly, which this research statistically analyzes among STE students.</p>
+  </div>
+
+  <div class="content fade-scroll" id="recommendations">
+    <h2>• Recommendations</h2>
+    <ul>
+      <li>Students should review past exam mistakes and study regularly.</li>
+      <li>Teachers may conduct remedial sessions after low-performing quarters.</li>
+      <li>Schools can organize peer tutoring programs to help struggling students.</li>
+      <li>Promote consistent study schedules instead of cramming before exams.</li>
+    </ul>
+  </div>
+
+  <div class="content fade-scroll" id="documentary">
+    <h2>• Documentary Photos</h2>
+    <div class="photo-grid">
+      <figure>
+        <img src="research1.jpg" alt="Research Documentation 1">
+        <figcaption>Group members conducting data gathering.</figcaption>
+      </figure>
+      <figure>
+        <img src="research2.jpg" alt="Research Documentation 2">
+        <figcaption> Interviewing respondents for statistical data.</figcaption>
+      </figure>
+      <figure>
+        <img src="research3.jpg" alt="Research Documentation 3">
+        <figcaption> Tabulating and analyzing research findings.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="content fade-scroll" id="authors">
+    <h2>• Research Authors & Group Members</h2>
+    <h3>Original Authors</h3>
+    <p>
+      Based on referenced studies from:<br>
+      <a href="https://www.deped.gov.ph" target="_blank">Department of Education (DepEd)</a><br>
+      <a href="https://eric.ed.gov" target="_blank">ERIC Educational Resources</a><br>
+      <a href="https://scholar.google.com" target="_blank">Google Scholar Studies</a>
+    </p>
+    <h3>Research Group</h3>
+    <p><strong>Leader:</strong> Bambico, Lady Lyn Faye DG.</p>
+    <p><strong>Members:</strong></p>
+    <ul>
+      <li>Liwang, Princess Angie C.</li>
+      <li>Madronio, Dia Nova R.</li>
+      <li>Pimentel, Ayesha Aislinn Y.</li>
+      <li>Punzalan, Katrina Sophia V.</li>
+      <li>Lacaden, Kyle C.</li>
+      <li>Lucagan, Gyan Von A.</li>
+      <li>Palejchon, Rheymar Jhay</li>
+      <li>Pascua, Silver Marc C.</li>
+      <li>Rafael, Melvin Jay P.</li>
+    </ul>
+  </div>
+
+  <footer>© 2025 Interactive Research | For Educational Use Only</footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({behavior: "smooth"});
+    }
+    // Fade-in on scroll
+    const fadeElements = document.querySelectorAll(".fade-scroll");
+    function handleScrollFade() {
+      fadeElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100 && rect.bottom > 100) {
+          el.classList.add("visible");
+        } else {
+          el.classList.remove("visible");
+        }
+      });
+    }
+    window.addEventListener("scroll", handleScrollFade);
+    handleScrollFade();
+  </script>
+</body>
+</html>
